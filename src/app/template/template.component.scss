@@ -1,0 +1,187 @@
+@import "../../styles.scss";
+.main-wrapper {
+	/*display: flex;*/
+}
+.sidebar {
+	width: 26rem;
+	padding: 1rem;
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+	.top {
+		border-bottom: .1rem solid #ddd;
+		text-align: center;
+		margin-bottom: 2rem;
+		img {
+			display: block;
+		    height: 7rem;
+		    width: 7rem;
+		    margin: auto;
+		    border-radius: 50%;
+		}
+		h2 {
+			font-size: 1.8rem;
+			height: 6rem;
+		    line-height: 6rem;
+   		}
+	}
+	.bottom {
+		ul li {
+		    &:first-child a {
+				margin: 0 5px;		    	
+		    }		
+			a {
+				display: block;
+				margin: 10px 5px 0;
+			    border-radius: 3px;
+			    color: #3C4858;
+			    padding-left: 10px;
+			    padding-right: 10px;
+			    text-transform: capitalize;
+			    font-size: 13px;
+			    padding: 10px 15px;
+			    line-height: 3rem;
+			    transition: all 200ms ease-in-out;
+			    i {
+			    	display: inline-block;
+			    	font-size: 24px;
+				    float: right;
+				    margin-left: 15px;
+				    line-height: 30px;
+				    width: 30px;
+				    text-align: center;
+				    color: #a9afbb;
+			    }
+			    &:hover {
+			    	background-color: rgba(200, 200, 200, 0.2);
+				    color: #3C4858;
+				    box-shadow: none;
+			    }
+			    &.active {
+			    	background-color: $primary;
+	    			box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(184, 24, 66, 0.25);
+				    color: #fff;
+			    }
+			}
+			.icon {
+				display: inline-block;
+			    margin-left: 1rem;
+			    font-size: 1.6rem;
+			    vertical-align: middle;
+			}
+		}
+	}
+	footer {
+		position: absolute;
+		bottom: 0;
+	    width: calc(100% - 2rem);
+	    padding: 1rem 0;	    
+	    text-align: center;
+	    border-top: .1rem solid #ddd;
+	    span {
+	    	display: inline-block;
+	    	direction: ltr;
+	    }
+   	}
+}
+.main-content {
+	position: relative;
+    float: left;
+    width: calc(100% - 260px);
+    transition: 0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1);
+   	.navbar {
+   		display: flex;
+   		justify-content: space-between;
+	    padding: 1rem 1.5rem;
+	    margin-bottom: 20px;
+	    height: auto !important;
+	    color: #555;
+	    background: white;
+	    border-bottom: .1rem solid #e2e2e2;
+	    position: fixed;
+    	width: calc( 100% - 26rem);
+    	z-index: 1;
+   	    h3 {
+	    	margin: 0;
+	    	line-height: 3.4rem;
+	    	font-size: 1.6rem;
+    		font-weight: 200;
+	    }
+	    .left {
+	    	float: left;
+	    	position: relative;
+	    	display: flex;
+	    	> span {
+	    		line-height: 3.4rem;
+	    		margin-right: 1rem;
+	    		font-size: 1.4rem;
+	    		font-weight: 200;
+	    	}
+	    	.time {
+	    		direction: ltr;
+	    	}
+	    }
+	    .profile {
+	    	cursor: pointer;
+    		margin-right: 1rem;
+    		height: 3rem;
+    		width: 3rem;
+	    	text-align: center;
+	    	span {
+	    		display: inline-block;
+	    		font-size: 2.2rem;
+			    height: 100%;
+			    width: 100%;
+/*	    		background: url(../../assets/images/person.png) no-repeat center;
+	    		background-size: 2rem;*/
+	    	}
+	    	.drop-down {
+			    position: absolute;
+			    top: 100%;
+			    left: 0;
+			    z-index: 1000;
+			    /*display: none;*/
+			    float: left;
+			    min-width: 16rem;
+			    padding: 0.5rem 0;
+			    margin: 0.125rem 0 0;
+			    font-size: 1rem;
+			    color: #212529;
+			    text-align: left;
+			    list-style: none;
+			    background-color: #ffffff;
+			    background-clip: padding-box;
+			    border: 1px solid rgba(0, 0, 0, 0.15);
+			    border-radius: 0.25rem;
+			    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.14);
+	  			a {
+	  				display: block;
+				    display: block;
+				    padding: 1rem 3rem;
+				    margin: 0 .5rem;
+				    border-radius: 0.3rem;
+   				    font-size: 1.2rem;
+				    text-align: right;
+				    &:hover {
+				    	background-color: $primary;
+		    			box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(184, 24, 66, 0.25);
+					    color: #fff;
+				    }
+   	  			}
+   	  			.divider {
+   	  				height: 0;
+				    margin: 0.5rem 0;
+				    overflow: hidden;
+				    border-top: 1px solid #e9ecef;
+   	  			}
+	    	}
+	    }
+	}
+	.inner-content {
+		padding: 10rem 1.5rem 1rem;
+	}
+}

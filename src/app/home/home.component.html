@@ -1,0 +1,87 @@
+<app-loading *ngIf="isLoading"></app-loading>
+<div *ngIf="!isLoading">
+  <div class="top">
+    <div class="card with-icon">
+      <span class="has-icon green">
+        <i class="far fa-user"></i>
+      </span>
+      <h3>
+        <strong>{{entityMember.length}}</strong>
+        مشتری عضو شده
+      </h3>
+    </div>
+    <div class="card with-icon">
+      <span class="has-icon orange">
+        <i class="fas fa-coins"></i>       
+      </span>
+      <h3>
+        <strong>{{points ? points : 0}}</strong>
+        امتیاز باقی مانده
+      </h3>
+    </div>
+    <div class="card with-icon">
+      <span class="has-icon blue">
+        <i class="fas fa-award"></i>       
+      </span>
+      <h3>
+        <strong>{{entityReward.length}}</strong>
+        جایزه ثبت شده
+      </h3>
+    </div>
+  </div>
+  <div class="main">
+    <div class="card with-header">
+      <div class="header orange">
+        <h4>لیست مشتریان</h4>
+        <span>۱۰ مشتری جدید</span>
+      </div>
+      <table class="has-thumbnail">
+        <thead color="orange">
+          <th>شماره</th>
+          <th>نام مشتری</th>
+          <th>امتیاز</th>
+          <th>تعداد جوایز</th>
+          <th>مبلغ کل خرید</th>
+          <th>تاریخ عضویت</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let member of entityMember; let i = index ">
+            <td>{{i+1}}</td>          
+            <td>
+              <object class="thumbnail" border="0">
+                <img *ngIf="member.media?.thumbnail" src="{{member.media?.thumbnail}}">
+              </object>
+              {{member.name}}
+            </td>          
+            <td>{{member.points | number}}</td>          
+            <td>{{member.rewardUsed | number}}</td>          
+            <td>{{member.prices | number}}</td> 
+            <td>{{member.j_created_at}}</td>
+          </tr>         
+        </tbody>
+      </table>        
+    </div>
+    <div class="card with-header">
+      <div class="header blue">
+        <h4>لیست جوایز</h4>
+        <span>جوایز ثبت شده</span>
+      </div>
+      <table>
+        <thead color="blue">
+          <th>شماره</th>
+          <th>عنوان</th>
+          <th>امتیاز موردنیاز</th>
+          <th>تعداد خریداری شده</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reward of entityReward; let i = index ">
+            <td>{{i+1}}</td>          
+            <td>{{reward.desc}}</td>          
+            <td>{{reward.point}}</td>          
+            <td>{{reward.used_count}}</td>          
+          </tr>         
+        </tbody>
+      </table>        
+    </div>
+  </div>
+</div>

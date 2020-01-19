@@ -1,0 +1,34 @@
+<app-loading *ngIf="isLoading"></app-loading>
+<div *ngIf="!isLoading">
+    <div class="card with-header">
+      <div class="header red">
+        <h4>لیست مشتریان</h4>
+        <span>اطلاعات کلیه مشتریان عضو شده</span>
+      </div>
+      <table class="has-thumbnail">
+        <thead color="red">
+          <th>شماره</th>
+          <th>نام مشتری</th>
+          <th>امتیاز</th>
+          <th>تعداد جوایز</th>
+          <th>مبلغ کل خرید</th>
+          <th>تاریخ عضویت</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let member of entityMember; let i = index ">
+            <td>{{i+1}}</td>          
+            <td>
+              <object class="thumbnail" border="0">
+                <img *ngIf="member.media?.thumbnail" src="{{member.media?.thumbnail}}">
+              </object>
+              {{member.name}}
+            </td>          
+            <td>{{member.points | number}}</td>          
+            <td>{{member.rewardUsed | number}}</td>          
+            <td>{{member.prices | number}}</td> 
+            <td>{{member.j_created_at}}</td>
+          </tr>         
+        </tbody>
+      </table>        
+    </div>
+ </div>

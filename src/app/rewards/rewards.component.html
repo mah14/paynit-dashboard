@@ -1,0 +1,65 @@
+<app-loading *ngIf="isLoading"></app-loading>
+<div *ngIf="!isLoading">
+	<div>
+		<button class="btn white" (click)="showAddBox()">
+			<i class="fas fa-plus"></i>ایجاد جایزه جدید
+		</button>
+	</div>
+	<div *ngIf="showBox">
+	    <div class="card">
+	      <form (ngSubmit)="addItem()">
+<!-- 	      	<div>
+	      		<label for="point-title">عنوان</label>
+	      		<input type="text" name="title" id="point-title" placeholder="مثلا: به ازای هر ۱۰۰۰ تومان خرید ۱ امتیاز">
+			</div>
+			<div>
+		      	<label for="point-min">حداقل مبلغ خرید</label>
+		      	<input type="text" name="title" id="point-min">
+		    </div> -->
+			<div>
+		      	<!-- <label for="point-price">به ازای هر</label> -->
+		      	هر
+		      	<input type="number" name="price" id="point-price" placeholder="مثال: ۵">
+		      	امتیاز، یک 
+		      	<input type="tel" name="point" placeholder="مثال: نسکافه رایگان">
+		    </div>
+<!-- 		    <div>
+		      	<label for="point-max">سقف خرید (اختیاری)</label>
+		      	<input type="text" name="title" id="point-max">
+		      	(سقف خرید یعنی برای خریدهای بیشتر از این مبلغ امتیازی درنظر گرفته نمیشود)
+	      	</div>	 -->
+	      	<div center>
+	      		<button type="submit">ارسال</button>
+	      	</div>
+	      </form>
+	    </div>		
+	</div>
+    <div class="card with-header">
+      <div class="header orange">
+        <h4>جوایز</h4>
+        <span>لیست جوایز ثبت شده</span>
+      </div>
+      <div>
+      	<table>
+	        <thead color="orange">
+	          <th>شماره</th>
+	          <th>عنوان</th>
+	          <th>امتیاز مورد نیاز</th>
+	          <th>تعداد خریداری شده</th>
+<!-- 	          <th>سقف خرید</th>
+	          <th>مبلغ سقف خرید</th> -->
+	        </thead>
+	        <tbody>
+	          <tr *ngFor="let reward of rewards; let i = index ">
+	            <td>{{i+1}}</td>          
+	            <td>{{reward.desc}}</td>          
+	            <td>{{reward.point}}</td>          
+	            <td>{{reward.used_count}}</td>          
+<!-- 	            <td>ندارد</td> 
+	            <td>-</td>    -->      
+	          </tr>         
+	        </tbody>
+	      </table>        
+      </div>
+  </div>
+</div>

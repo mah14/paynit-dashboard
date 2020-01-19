@@ -1,0 +1,37 @@
+<div class="main-wrapper">
+	<div class="bg"></div>
+	<img src="assets/images/logo.png">
+	<h1>پی نیت</h1>
+	<h2>سیستم مدیریت باشگاه وفاداری</h2>
+	<div class="inner-wrapper">
+		<div *ngIf="!step2">
+			<h3>برای ورود شماره موبایل خود را وارد نمایید:</h3>
+			<form (ngSubmit)="getCode()">
+				<input type="tel" placeholder="مانند: ۰۹۱۲۰۰۰۰۰۰۰" ng-model="userPhone" (change)="getLength($event)" maxlength="11">
+				<p *ngIf="userPhone.length < 11">شماره همراه باید ۱۱ رقمی باشد</p>
+				<div *ngIf="loading" class="spinner-box">
+					<i class="fas fa-spinner"></i>
+				</div>
+				<div [ngClass]="{'is-hidden': loading}">
+					<button type="submit">
+						<span>ارسال</span>
+					</button>	
+				</div>
+			</form>
+		</div>
+		<div *ngIf="step2">
+			<h3>کد ارسال شده به تلفن همراهتان را وارد کنید:</h3>
+			<form (ngSubmit)="sendCode()">
+				<input type="tel" placeholder="کد چهار رقمی" ng-model="userCode" (change)="codeGetLength($event)" maxlength="4">
+				<div *ngIf="loading" class="spinner-box">
+					<i class="fas fa-spinner"></i>
+				</div>
+				<div *ngIf="!loading">
+					<button type="submit">
+						<span>ارسال</span>
+					</button>	
+				</div>	 
+		    </form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,425 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'assets/style/fonts.scss';
+@import 'assets/style/normalize.scss';
+
+
+$fontset: iranyekan,tahoma;
+$bodybg: #eee;
+$fontcolor: #666; /*#3F4A54;*/
+$latinfont: arial;
+
+$primary: #B61D44;
+$secondary: #EF6665;
+/*$thirdcolor: #7789E0;
+$fourthcolor: #6F4EE6;*/
+$green: #4caf50;
+$blue: #00bcd4;
+$red: #f44336;
+$orange: #ff9800;
+$violet: #9c27b0;
+
+input, button, textarea{
+    font-family: inherit;
+}
+html, body {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 !important;
+    box-sizing: border-box;
+    min-width: 320px;  /*120rem;*/
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $bodybg;
+    color: $fontcolor;
+    font-size: 1.2rem;
+    font-family: $fontset;
+    font-weight: normal;
+    direction: rtl;
+}   
+
+* {
+    box-sizing: border-box;
+}
+
+ol,ul,menu {
+    list-style-position: inside;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+}
+a {
+    text-decoration: none;
+    color: $fontcolor;
+    color: unset;
+    cursor: pointer;
+    /*@include transition(color,text-shadow 200ms ease);*/
+}
+
+a:hover, a:focus { 
+    text-shadow: 0 0 0;
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    line-height: normal;
+    margin: 0;
+}
+h2 {
+    font-size: 2.6rem; 
+    font-weight: 500;
+}
+h3 { 
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+h4 {
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+h5 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+h6 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+p {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    font-weight: normal;
+}
+b,strong {
+    font-weight: bold;
+}
+[class^="icon-"], [class*=" icon-"] {
+    vertical-align: sub;
+}
+
+[color="primary"] {
+    color: $primary !important;
+}
+
+[color="secondary"] {
+    color: $secondary !important;
+}
+
+[color="orange"] {
+    color: $orange !important;
+}
+
+[color="red"] {
+    color: $red !important;
+}
+
+[color="blue"] {
+    color: $blue !important;
+}
+
+[color="green"] {
+    color: $green !important;
+}
+
+[color="violet"] {
+    color: $violet !important;
+}
+
+[center] {
+  text-align: center;
+}
+
+[right] {
+    text-align: right !important;
+}
+
+[left] {
+    text-align: left !important;
+}
+
+.latin {
+    font-family: $latinfont;
+    font-size: 1.1rem;
+}
+.full {
+    width: 100%;
+}
+
+.pull_left {
+    float: left !important;
+}
+
+.pull_right {
+    float: right !important;
+}
+.no_float {
+    float: none;
+}
+.center {
+    text-align: center;
+    margin: auto;
+}
+
+.has-underline {
+    border-bottom: 1px solid;
+    display: inline;
+    padding: 0 .1rem;
+} 
+
+.has-icon {
+    position: relative;
+    &:before {
+        content: "";
+    }
+}  
+.show-overflow {
+    overflow: visible;
+}
+.hide-overflow {
+    overflow: hidden;;
+}
+.no-margin {
+    margin: 0 !important;
+}
+
+input, textarea{
+    text-align: right;
+    direction: rtl;
+    vertical-align: middle;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    width: 1.6rem !important;
+    height: 3.4rem;
+}
+
+.no-border {
+    border: none !important;
+}
+ 
+.is-hidden {
+    display: none !important;
+}
+
+.is-shown {
+    display: block !important;
+}
+
+.is-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} 
+.is-nowrap {
+    white-space: nowrap;
+}
+.light_txt {
+    opacity: 0.7;
+}
+.is-fixed {
+    position: fixed;
+}
+
+*:focus { 
+    outline: none;
+} 
+
+.clrfx:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+* html .clrfx {
+    zoom: 1;
+}
+
+/* IE6 */
+*:first-child + html .clrfx {
+    zoom: 1;
+}
+
+/* IE7 */
+
+
+input {
+    height: 4rem;
+    width: 22rem;
+    padding: 0 1rem;
+    border: .1rem solid #ddd;
+    border-radius: 0.3rem;
+}
+
+button {
+    height: 4rem;
+    width: auto;
+    margin: 2rem 0;
+    padding: 0 4rem;
+    background: $primary;
+    border-radius: 4rem;
+    color: #fff;
+    font-size: 1.4rem;
+    border: none;
+    box-shadow: 0 .1rem .5rem #00000030;
+    &:focus {
+        outline: none;
+    }
+    &[disabled] {
+        background: #ddd;
+    }
+}
+
+.spinner-box {
+    margin: 2rem 0;
+    font-size: 3rem;
+}
+.fa-spinner {
+    animation: fa-spin 1.4s infinite linear;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.card {
+    background: #fff;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+    padding: 1.5rem;
+    border-radius: .6rem;
+    margin: .5rem;
+    margin-bottom: 6rem;
+    margin-top: 3rem;
+    /*overflow: hidden;*/
+    display: flex;
+    &.with-icon {
+        .has-icon {
+            height: 8rem;
+            width: 8rem;
+            background: #ddd;
+            display: inline-block;
+            margin-right: 0rem;
+            margin-top: -3.5rem;
+            margin-left: 1.5rem;
+            color: #fff;
+            border-radius: 0.3rem;
+            text-align: center;
+            font-size: 3.4rem;
+            line-height: 8rem;
+        }
+    }
+    &.with-header {
+        display: block;
+    }
+    .header {
+        margin-right: 0rem;
+        margin-top: -3.5rem;
+        margin-bottom: 2rem;
+        color: #fff;
+        border-radius: 0.3rem;
+        text-align: center;
+        padding: 1rem 2rem;
+        text-align: right;
+    }
+}
+
+.green {
+    background: linear-gradient(60deg,#66bb6a,#43a047) !important;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(76,175,80,.4);
+}
+.orange {
+    background: linear-gradient(60deg,#ffa726,#fb8c00) !important;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(255,152,0,.4);
+}
+.red {
+    background: linear-gradient(60deg,#ef5350,#e53935) !important;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(244,67,54,.4);
+}
+.blue {
+    background: linear-gradient(60deg,#26c6da,#00acc1) !important;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0,188,212,.4);
+}
+.violet {
+    background: linear-gradient(60deg,#ab47bc,#8e24aa);
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(156,39,176,.4);
+}
+
+table {
+    width: calc(100% - 1rem);
+    font-size: 1.4rem;
+    margin: .5rem;
+    th, td {
+        font-weight: 100;
+        text-align: right;
+        padding: 1.2rem .8rem;
+    }
+    tr, thead {
+        border-bottom: .1rem solid #ddd;
+        &:last-child {
+            border: none;
+        }
+    }
+    &.has-thumbnail td {
+        line-height: 5rem;
+        &:nth-child(2) {
+            font-weight: 400;
+        }
+    }
+}
+
+.thumbnail {
+    height: 5rem;
+    width: 5rem;
+    background: url("/assets/images/person.png") no-repeat center #c0bfbf;
+    background-blend-mode: color-dodge;
+    background-size: 45%;
+    display: inline-block;
+    border-radius: 100%;
+    overflow: hidden;
+    float: right;
+    margin-left: 1.4rem;
+    box-shadow: 0 0.1rem 0.3rem #00000030;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.btn.white {
+    display: inline-block;
+    height: 4.4rem;
+    margin: 0rem 0 2rem;
+    padding: 0 2rem;
+    background: #fff;
+    border-radius: .4rem;
+    line-height: 4.4rem;
+    font-size: 1.6rem;
+    box-shadow: 0 0.1rem 0.3rem #00000030;
+    color: $fontcolor;
+    transition: all 300ms ease-in-out;
+    > [class*="fa-"] {
+        margin-left: 1rem;
+    }
+    &:hover {
+        background: $secondary;
+        color: #fff;
+    }
+}
+
+/* ANIMATION*/
+
+@keyframes fa-spin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);        
+    }
+}

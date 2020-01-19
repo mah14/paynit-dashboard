@@ -1,0 +1,67 @@
+<app-loading *ngIf="isLoading"></app-loading>
+<div *ngIf="!isLoading">
+<!--	<div>
+		<button class="btn white" (click)="showAddBox()">
+			<i class="fas fa-plus"></i>ایجاد قانون جدید
+		</button>
+	</div>
+	<div *ngIf="showBox">
+	    <div class="card">
+	      <form (ngSubmit)="addItem()">
+<!-- 	      	<div>
+	      		<label for="point-title">عنوان</label>
+	      		<input type="text" name="title" id="point-title" placeholder="مثلا: به ازای هر ۱۰۰۰ تومان خرید ۱ امتیاز">
+			</div>
+			<div>
+		      	<label for="point-min">حداقل مبلغ خرید</label>
+		      	<input type="text" name="title" id="point-min">
+		    </div> ->
+			<div>
+		      	<!-- <label for="point-price">به ازای هر</label> ->
+		      	به ازای هر
+		      	<input type="tel" name="price" id="point-price" placeholder="مثال: ۱۰,۰۰۰">
+		      	تومان خرید
+		      	<input type="tel" name="point" placeholder="مثال: ۱">
+		      	امتیاز
+		    </div>
+<!-- 		    <div>
+		      	<label for="point-max">سقف خرید (اختیاری)</label>
+		      	<input type="text" name="title" id="point-max">
+		      	(سقف خرید یعنی برای خریدهای بیشتر از این مبلغ امتیازی درنظر گرفته نمیشود)
+	      	</div>	 ->
+	      	<div center>
+	      		<button type="submit">ارسال</button>
+	      	</div>
+	      </form>
+	    </div>		
+	</div>
+-->	
+    <div class="card with-header">
+      <div class="header green">
+        <h4>امتیازدهی</h4>
+        <span>قوانین امتیازدهی</span>
+      </div>
+      <div>
+      	<table>
+	        <thead color="green">
+	          <th>شماره</th>
+	          <th>عنوان</th>
+	          <th>حداقل مبلغ خرید</th>
+<!-- 	          <th>سقف خرید</th>
+	          <th>مبلغ سقف خرید</th> -->
+	          <th></th>
+	        </thead>
+	        <tbody>
+	          <tr>
+	            <td>1</td>          
+	            <td>به ازای هر ۵۰۰۰۰ تومان خرید ۱ امتیاز</td>          
+	            <td>۵۰۰۰۰</td>          
+<!-- 	            <td>ندارد</td> 
+	            <td>-</td>    -->   
+	            <td></td>   
+	          </tr>         
+	        </tbody>
+	      </table>        
+      </div>
+  </div>
+</div>

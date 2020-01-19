@@ -1,0 +1,48 @@
+<div class="main-wrapper">
+  <div class="sidebar">
+    <div class="top">
+      <img src="{{entityData.logo?.thumbnail}}">
+      <h2><a (click)="goToProfile()">{{ entityData.title }}</a></h2>
+    </div>
+    <div class="bottom">
+      <ul>
+        <li *ngFor=" let item of items">
+          <a (click)="goToPage(item)" [class.active]="page == item.component">
+            <span class="icon"><i class="fas fa-{{item.icon}}"></i></span>
+            <span>{{ item.name }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+<!--     <footer>© 2019, made with <i class="fas fa-heart"></i> by Paynit Tim</footer> -->
+    <footer>ایجاد شده با <i class="fas fa-heart"></i> توسط تیم پی نیت . Paynit <br> <span>© 2019</span></footer>
+  </div>
+  <div class="main-content">
+    <nav class="navbar">
+      <h3>{{ pageName }}</h3>
+      <div class="left">
+        <span class="time">{{ todayTime | date:'shortTime'}}</span>
+        <span class="date">{{ today }}</span>
+        <div class="profile">
+          <span (click)="showDropDown()">
+            <i class="fas fa-user"></i>
+          </span>
+          <div class="drop-down" *ngIf="showDrop">
+            <a (click)="goToProfile()">پروفایل</a>
+            <a href="#">تنظیمات</a>
+            <div class="divider"></div>
+            <a href="#" (click)="logOut()">خروج</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="inner-content">
+      <app-home *ngIf="page == 'home'"></app-home>
+      <app-customers *ngIf="page == 'customers'"></app-customers>
+      <app-points *ngIf="page == 'points'"></app-points>
+      <app-rewards *ngIf="page == 'rewards'"></app-rewards>
+      <app-profile *ngIf="page == 'profile'"></app-profile>
+    </div>
+    <footer></footer>
+  </div>
+</div>
